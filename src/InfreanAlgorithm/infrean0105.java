@@ -1,10 +1,9 @@
-
-
+package InfreanAlgorithm;
 
 import java.util.Scanner;
 
 
-public class Main {
+public class infrean0105 {
     public static void solution(String str) {
         StringBuilder sb = new StringBuilder(str);
         System.out.println(sb.reverse());
