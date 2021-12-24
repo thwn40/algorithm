@@ -1,5 +1,6 @@
 package InfreanAlgorithm;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -9,6 +10,30 @@ public class infrean0105 {
         System.out.println(sb.reverse());
 
 
+    }
+    public static String solution3(String str) {
+
+            char[] s = str.toCharArray();
+            int lt = 0, rt = str.length() - 1;
+            while (lt < rt) {
+                if(!Character.isLetter(s[lt])){
+                    lt++;
+
+            }
+                else if(!Character.isLetter(s[rt])){
+                    rt--;
+                }
+                else{
+                    char tmp = s[lt];
+                    s[lt] = s[rt];
+                    s[rt] = tmp;
+                    lt++;
+                    rt--;
+                }
+
+        }
+        String tmp = String.valueOf(s);
+        return tmp;
     }
 
     public static String[] solution2(String str) {
@@ -34,12 +59,8 @@ public class infrean0105 {
 
 
         String s = kb.nextLine();
-
-        for (String t :
-                solution2(s)) {
-            System.out.print(t);
+        System.out.println(solution3(s));
 
 
-        }
     }
 }
