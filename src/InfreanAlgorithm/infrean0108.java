@@ -8,6 +8,8 @@ public class infrean0108 {
     public static String solution(String str) {
         String answer = "NO";
         String temp = "";
+        String s=str.toUpperCase().replaceAll("[^A-Z]","");
+        String tmp=new StringBuilder(s).reverse().toString();
         for(int i=0; i<str.length(); i++){
             if(Character.isLetterOrDigit(str.charAt(i))){
                 temp+=str.charAt(i);

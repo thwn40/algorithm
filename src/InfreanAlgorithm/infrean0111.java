@@ -1,11 +1,9 @@
-
-
-
+package InfreanAlgorithm;
 
 import java.util.Scanner;
 
 
-public class Main {
+public class infrean0111 {
     public static String solution(String str) {
         String answer = "";
         int count = 1;
@@ -44,6 +42,5 @@ public class Main {
 
 
 
-        }
     }
-
+}
