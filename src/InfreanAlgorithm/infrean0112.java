@@ -1,3 +1,5 @@
+package InfreanAlgorithm;
+
 
 
 
@@ -5,7 +7,7 @@
 import java.util.Scanner;
 
 
-public class Main {
+public class infrean0112 {
     public static void solution(int num, String str) {
         String answer = "";
         str =str.replace('#','1');
@@ -36,6 +38,6 @@ public class Main {
 
 
 
-        }
     }
+}
 
