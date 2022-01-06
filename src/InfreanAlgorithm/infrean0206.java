@@ -1,20 +1,12 @@
-
-
-
-
+package InfreanAlgorithm;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
-import java.util.Arrays;
 
-
-
-
-public  class Main {
+public class infrean0206 {
     static Scanner kb = new Scanner(System.in);
     public static void solution(int num) {
-kb.nextLine();
+        kb.nextLine();
 
         Integer[] array2 = new Integer[num];
         String[] temp = new String[num];
@@ -79,6 +71,6 @@ kb.nextLine();
 
         solution(num);
 
-        }
     }
+}
 
