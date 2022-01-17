@@ -1,6 +1,4 @@
-
-
-
+package InfreanAlgorithm;
 
 
 
@@ -9,26 +7,21 @@ import java.util.*;
 
 
 
-public  class Main {
+public  class infrean0304 {
     static Scanner kb = new Scanner(System.in);
-    public static void solution(int n,int n2, int[] a) {
-
+    public static void solution(int n, int m, int[] a) {
 
         int answer = 0, sum = 0, lt = 0;
-        for (int rt = 1; rt < n; rt++) {
+        for (int rt = 0; rt < n; rt++) {
+            sum += a[rt];
 
-
-            if (sum == n) {
-                System.out.print(" rt = " + rt);
-                System.out.print(" lt = " + lt);
+            if (sum == m) {
                 answer++;
             }
 
-            while (sum >= n) {
+            while (sum >= m) {
                 sum -= a[lt++];
-                if (sum == n&&lt!=rt) {
-                    System.out.print(" rt = " + rt);
-                    System.out.print(" lt = " + lt);
+                if (sum == m) {
                     answer++;
                 }
             }
@@ -45,8 +38,10 @@ public  class Main {
 
         int n1 = kb.nextInt();
         int n2 = kb.nextInt();
+
+
         int[] arr1 = new int[n1];
-        for (int i = 0; i < n1; i++) {
+        for (int i = 0; i < arr1.length; i++) {
             arr1[i]=kb.nextInt();
         }
 
@@ -54,10 +49,7 @@ public  class Main {
 
 
 
-
-
         solution(n1,n2,arr1);
 
-        }
     }
-
+}
