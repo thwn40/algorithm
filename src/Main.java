@@ -3,38 +3,41 @@
 
 
 
+import java.util.Arrays;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
-
+import static java.lang.Math.max;
 
 
 public  class Main {
     static Scanner kb = new Scanner(System.in);
-    public static void solution(int n,int n2, int[] a) {
+    public static void solution(String a, String b) {
 
 
-        int answer = 0, sum = 0, lt = 0;
-        for (int rt = 1; rt < n; rt++) {
 
+        HashMap<Character, Integer> map1 = new HashMap();
+        HashMap<Character, Integer> map2 = new HashMap();
+        for (char x : a.toCharArray()
+        ) {
+            map1.put(x, map1.getOrDefault(x, 0) + 1);
 
-            if (sum == n) {
-                System.out.print(" rt = " + rt);
-                System.out.print(" lt = " + lt);
-                answer++;
-            }
+        }   for (char x : b.toCharArray()
+        ) {
+            map2.put(x, map2.getOrDefault(x, 0) + 1);
 
-            while (sum >= n) {
-                sum -= a[lt++];
-                if (sum == n&&lt!=rt) {
-                    System.out.print(" rt = " + rt);
-                    System.out.print(" lt = " + lt);
-                    answer++;
-                }
-            }
         }
 
-        System.out.println(answer);
+        if(map1.equals(map2)){
+            System.out.println("YES");
+        }
+        else
+        {
+            System.out.println("NO");
+        }
+
     }
 
 
@@ -43,21 +46,18 @@ public  class Main {
 
     public static void main(String[] args) {
 
-        int n1 = kb.nextInt();
-        int n2 = kb.nextInt();
-        int[] arr1 = new int[n1];
-        for (int i = 0; i < n1; i++) {
-            arr1[i]=kb.nextInt();
-        }
+        String a= kb.nextLine();
+        String b = kb.nextLine();
 
 
 
 
 
 
+        solution(a,b);
 
-        solution(n1,n2,arr1);
-
-        }
     }
+}
+
+
 
