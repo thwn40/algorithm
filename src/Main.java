@@ -3,39 +3,36 @@
 
 
 
-import java.util.Arrays;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
-import static java.lang.Math.max;
+
 
 
 public  class Main {
     static Scanner kb = new Scanner(System.in);
-    public static void solution(String a, String b) {
-
-
-
-        HashMap<Character, Integer> map1 = new HashMap();
-        HashMap<Character, Integer> map2 = new HashMap();
-        for (char x : a.toCharArray()
-        ) {
-            map1.put(x, map1.getOrDefault(x, 0) + 1);
-
-        }   for (char x : b.toCharArray()
-        ) {
-            map2.put(x, map2.getOrDefault(x, 0) + 1);
-
+    public static void solution(int a, int b) {
+int[] arr = new int[a];
+        for (int i = 0; i < a; i++) {
+            arr[i]=kb.nextInt();
         }
-
-        if(map1.equals(map2)){
-            System.out.println("YES");
+        List<Integer> ans = new ArrayList<>();
+        for (int i = 0; i < b; i++) {
+            ans.add(arr[i]);
         }
-        else
-        {
-            System.out.println("NO");
+        Set<Integer> temp = new HashSet<>(ans);
+        System.out.print(Set.copyOf(ans).size()+" ");
+
+        int lt = b;
+
+        for (int rt = 0; rt < a-b; rt++) {
+            ans.remove(0);
+            ans.add(arr[lt++]);
+
+
+            System.out.print(Set.copyOf(ans).size()+" ");
+
+            
         }
 
     }
@@ -46,9 +43,8 @@ public  class Main {
 
     public static void main(String[] args) {
 
-        String a= kb.nextLine();
-        String b = kb.nextLine();
-
+        int a = kb.nextInt();
+        int b = kb.nextInt();
 
 
 
