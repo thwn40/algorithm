@@ -43,7 +43,7 @@ public  class Main {
     public static void main(String[] args) {
 
        String a= kb.nextLine();
-
+        System.out.println("a = " + a);
         solution(a);
 
     }
