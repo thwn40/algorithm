@@ -10,66 +10,47 @@ import java.util.*;
 
 public  class Main {
     static Scanner kb = new Scanner(System.in);
-    public static void solution(int n, int k) {
-        Queue<Person> queue = new LinkedList<>();
+    public static void solution(int n) {
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+         arr[i]=kb.nextInt();
+        }
+
+        int temp =0;
+        int min=0;
 
         for (int i = 0; i < n; i++) {
-            int prirority = kb.nextInt();
-            queue.add(new Person(i, prirority));
-        }
-
-
-//        for (int i = 0; i < n; i++) {
-//            Person temp = queue.poll();
-//            System.out.print(temp.id);
-//            System.out.println(temp.priority);
-//
-//        }
-        int count =0;
-        while(!queue.isEmpty()){
-            Person temp=queue.poll();
-            for(Person x : queue) {
-                if(x.priority>temp.priority){
-                    queue.offer(temp);
-                    temp = null;
-                    break;
+            int minj = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[minj] > arr[j]) {
+                    minj = j;
                 }
 
             }
-            if(temp!=null){
-                count++;
-                if(temp.id==k){
-                    System.out.println(count);
-                }
-
-
-            }
+            temp = arr[i];
+            arr[i] = arr[minj];
+            arr[minj] = temp;
         }
 
+        for (int i : arr) {
+            System.out.print(i+" ");
+        }
+
+            }
 
 
-    }
 
 
     public static void main(String[] args) {
         int a = kb.nextInt();
-        int b = kb.nextInt();
-
-        solution(a,b);
 
 
+        solution(a);
 
 
 
-    }
-    public static class Person{
-        int id;
-        int priority;
 
-        public Person(int id, int priority) {
-            this.id = id;
-            this.priority = priority;
-        }
+
     }
 
 }

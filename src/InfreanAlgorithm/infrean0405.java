@@ -10,6 +10,11 @@ import java.util.*;
 
 
 
+import java.util.*;
+
+
+
+
 public  class infrean0405 {
     static Scanner kb = new Scanner(System.in);
     public static void solution(int a, int b) {
@@ -55,6 +60,3 @@ public  class infrean0405 {
 
     }
 }
-
-
-
