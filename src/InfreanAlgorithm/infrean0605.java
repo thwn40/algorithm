@@ -1,7 +1,10 @@
 package InfreanAlgorithm;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> cba115a2bbe1a0ec517763da2fcb1fc305d5060f
 import java.util.*;
 
 
@@ -18,8 +21,11 @@ public  class infrean0605 {
         }
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> cba115a2bbe1a0ec517763da2fcb1fc305d5060f
         if(arr.size()== arr1.length){
             System.out.println("U");
         }
@@ -46,6 +52,10 @@ public  class infrean0605 {
 
     }
 
+<<<<<<< HEAD
 }
 
 
+=======
+}
+>>>>>>> cba115a2bbe1a0ec517763da2fcb1fc305d5060f
