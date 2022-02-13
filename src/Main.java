@@ -1,79 +1,52 @@
 
 
 
-
-
-
 import java.util.*;
 
-class Node{
-        int data;
-        Node lt, rt;
-public Node(int val){
-        data=val;
-        lt=rt=null;
-        }
-        }
-
-
-
-public  class Main {
-    Node root;
-    int depth = 0;
-    static Scanner kb = new Scanner(System.in);
-    int answer =0;
-    int L=0;
-    public void BFS(int L,Node root) {
-
-            Queue<Node> Q = new LinkedList<>();
-            Q.offer(root);
-            while(!Q.isEmpty()){
-                int l = Q.size();
-
-                for (int i = 0; i < l; i++) {
-                    Node temp = Q.poll();
-                    if(temp.lt!=null){
-                        Q.offer(temp.lt);
-                    }if(temp.rt!=null){
-                        Q.offer(temp.rt);
-                    }
-                    else{
-                        System.out.println(L);
-                        return;
-                    }
-
+class Main {
+    static int n;
+    static int[] ch;
+    static ArrayList<Integer> arr;
+    static int[] answer;
+    static int sum =0;
+    static int j=0;
+    public void DFS(int L){
+        if(L==n+1){
+            String tmp="";
+            sum=0;
+            for(int i=1; i<=n; i++){
+                if(ch[i]==1) {
+                    tmp+=(i+" ");
+                    sum+=arr.get(i);
                 }
-                L++;
             }
-
+            System.out.println(tmp);
+            answer[j]=sum;
+            j++;
 
 
         }
-
-
-
-
-    public static void main(String[] args) {
-
-         Main tree = new Main();
-         tree.root= new Node(1);
-         tree.root.lt= new Node(2);
-         tree.root.rt = new Node(3);
-         tree.root.lt.lt= new Node(4);
-         tree.root.lt.rt= new Node(5);
-         tree.BFS(0,tree.root);
-
-
-
-
-
-
-
-
-
+        else{
+            ch[L]=1;
+            DFS(L+1);
+            ch[L]=0;
+            DFS(L+1);
+        }
     }
 
+    public static void main(String[] args){
+        Scanner kb = new Scanner(System.in);
+        Main T = new Main();
+        n=kb.nextInt();
+        arr = new ArrayList<>();
+        arr.add(-1);
+        answer = new int[(int) Math.pow((double) 2,(double) n)];
+        for (int i = 1; i < n+1; i++) {
+            arr.add(kb.nextInt());
+        }
+        ch=new int[n+1];
+        T.DFS(1);
+      Set<Integer> a = Set.copyOf(arr);
+      if(a.size());
+    }
 }
-
-
-
