@@ -1,63 +1,52 @@
-import com.sun.source.tree.Tree;
 
-import java.util.LinkedList;
-import java.util.Scanner;
-import java.util.TreeMap;
-class Node{
-    int data;
-    Node lt, rt;
-    public Node(int val){
-        data=val;
-        lt=rt=null;
-    }
-}
 
-public  class Main {
 
-    public static void DFS(Node root){
-        if(root==null){
-            return;
+import java.util.*;
+
+class Main {
+    static int n;
+    static int[] ch;
+    static ArrayList<Integer> arr;
+    static int[] answer;
+    static int sum =0;
+    static int j=0;
+    public void DFS(int L){
+        if(L==n+1){
+            String tmp="";
+            sum=0;
+            for(int i=1; i<=n; i++){
+                if(ch[i]==1) {
+                    tmp+=(i+" ");
+                    sum+=arr.get(i);
+                }
+            }
+            System.out.println(tmp);
+            answer[j]=sum;
+            j++;
+
+
         }
         else{
-            DFS(root.lt);
-            DFS(root.rt);
-            System.out.print(root.data+" ");
-
-
-
-
+            ch[L]=1;
+            DFS(L+1);
+            ch[L]=0;
+            DFS(L+1);
         }
-
-
-    }
-    static Scanner kb = new Scanner(System.in);
-
-
-    public static void main(String[] args) {
-        Node root=new Node(1);
-        root.lt = new Node(2);
-        root.rt = new Node(3);
-        root.lt.lt=new Node(4);
-        root.lt.rt=new Node(5);
-        root.rt=new Node(3);
-        root.rt.lt=new Node(6);
-        root.rt.rt=new Node(7);
-        DFS(root);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
+    public static void main(String[] args){
+        Scanner kb = new Scanner(System.in);
+        Main T = new Main();
+        n=kb.nextInt();
+        arr = new ArrayList<>();
+        arr.add(-1);
+        answer = new int[(int) Math.pow((double) 2,(double) n)];
+        for (int i = 1; i < n+1; i++) {
+            arr.add(kb.nextInt());
+        }
+        ch=new int[n+1];
+        T.DFS(1);
+      Set<Integer> a = Set.copyOf(arr);
+      if(a.size());
+    }
 }
-
