@@ -1,6 +1,8 @@
 
 
 
+import InfreanAlgorithm.infrean0803;
+
 import java.util.*;
 
 import java.util.*;
@@ -33,21 +35,11 @@ class Main {
 
     public static void main(String[] args){
 
-        Main T = new Main();
+        infrean0803 T = new infrean0803();
+String[] id={"muzi", "frodo", "apeach", "neo"};
+        String[] report={"muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"};
 
-        ArrayList<ArrayList<Integer>> arr = new ArrayList<>();
-
-        for (int i = 0; i < n; i++) {
-            arr.add(new ArrayList<Integer>());
-            for (int j = 0; j < 2; j++) {
-                arr.get(i).add(kb.nextInt());
-            }
-
-
-        }
-
-        T.dfs(0,sum,0,arr);
-        System.out.println(maxscore);
+        System.out.println(T.solution(id,report,2));
 
 
         }
