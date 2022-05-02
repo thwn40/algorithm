@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 //DFS와 BFS
-public class Main {
+public class BJ1260 {
 
     static int N;
     static ArrayList<ArrayList<Integer>> graph;
@@ -35,8 +35,16 @@ public class Main {
             graph.get(b).add(a);
         }
 
+
         for (int i = 0; i <= vertex; i++) {
             Collections.sort(graph.get(i));
+        }
+        int i = 0;
+        for (ArrayList<Integer> integers : graph) {
+
+            System.out.println(i+"번째원소"+integers);
+            i++;
+
         }
 
         dfs(start);
