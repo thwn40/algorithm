@@ -3,43 +3,56 @@
 
 import InfreanAlgorithm.infrean0803;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import java.util.*;
 
 class Main {
-    static Scanner kb = new Scanner(System.in);
-    static int sum = 0;
-    static int n =kb.nextInt();
-    static int m =kb.nextInt();
-    static int maxscore = 0;
-    boolean flag =false;
-        public void dfs(int a,int score,int time,ArrayList<ArrayList<Integer>> arr) {
 
-            if(m<time) return;
-            if(a==n){
-                if(m>=time){
+    public String solution(String m, String[] musicinfos) throws ParseException {
+        String answer = "none";
 
-                    maxscore=Math.max(maxscore,score);
-                }
+        for (String musicinfo : musicinfos) {
+            String[] split = musicinfo.split(",");
+            SimpleDateFormat f = new SimpleDateFormat("HH:mm",Locale.KOREA);
+            Date start = f.parse(split[0]);
+
+            Date end = f.parse(split[1]);
+
+            long min =((end.getTime()- start.getTime())/60000);
+
+            int playtime = split[3].length();
+
+
+            if(min>playtime){
+                musicinfo=split[3].repeat((int) (min/playtime));
+            }
+            else if(min<playtime){
+                musicinfo=split[3];
             }
 
-            else{
-                dfs(a+1,score+arr.get(a).get(0),time+arr.get(a).get(1),arr);
-                dfs(a+1,score,time,arr);
+            if(musicinfo.contains(m)){
+                answer=split[2];
             }
-
         }
 
 
+        return answer;
+    }
 
-    public static void main(String[] args){
 
-        infrean0803 T = new infrean0803();
-String[] id={"muzi", "frodo", "apeach", "neo"};
-        String[] report={"muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"};
 
-        System.out.println(T.solution(id,report,2));
+
+
+
+    public static void main(String[] args) throws ParseException {
+        Main main = new Main();
+        String[] musicinfo = new String[]{"03:00,03:30,FOO,CC#B", "04:00,04:08,BAR,CC#BCC#BCC#B"};
+        System.out.println(main.solution("CC#BCC#BCC#BCC#B",musicinfo));
+
+
 
 
         }
