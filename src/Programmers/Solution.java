@@ -1,74 +1,47 @@
 package Programmers;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.HashSet;
 
-    public class Solution {
-        public static String solution(String m, String[] musicinfos) throws ParseException {
-        /*
-        일단 musicinfo에서 두개 시간을 뺀다.
-         */
-            int maxPlayTime = -1;
-            String answer="(None)";
-            ArrayList<String> arr = new ArrayList<>();
-            SimpleDateFormat format = new SimpleDateFormat("HH:mm");
-
-            m=newMelody(m);
-
-            long playtime =0;
-            for (String musicinfo : musicinfos) {
-                String[] split = musicinfo.split(",");
-                String title = split[2];
-                Date start = format.parse(split[0]);
-                Date end = format.parse(split[1]);
-                playtime = (end.getTime()- start.getTime())/60000;
-                if(playtime<0){
-                    playtime=playtime*-1;
-                }
+public class Solution {
+    public int solution(int p) {
+        int answer = p;
 
 
-                split[3]=newMelody(split[3]);
 
 
-                String melodyinfo = split[3];
-
-                if(playtime>split[3].length()){
-                    melodyinfo = split[3].repeat((int) (playtime/split[3].length()))+split[3].substring(0, (int) (playtime%split[3].length()))+","+split[2];
-                }
-                else{
-                    String substring = split[3].substring(0, (int) playtime);
-                    melodyinfo = substring;
-                }
-
-                if(melodyinfo.contains(m)&&playtime>maxPlayTime){
-                    answer=title;
-                    maxPlayTime=(int)playtime;
-                }
+        for (int i = p+1; i <= 10000; i++) {
+            if(isBeauty(i)){
+                answer=i;
+                break;
             }
 
-            return answer;
         }
 
-
-
-
-
-    public static void main(String[] args) throws ParseException {
-        Solution solution = new Solution();
-        String m = "C#CB";
-        String[] musicinfo = new String[]{"13:50,14:00,FOO,CCC#CB", "04:00,04:08,BAR,ABC"};
-        System.out.println(solution(m,musicinfo));
+        return answer;
     }
 
-        public static String newMelody(String string){
-            string=string.replace(String.valueOf("C#"), "c");
-            string=string.replace(String.valueOf("D#"), "d");
-            string=string.replace(String.valueOf("F#"), "f");
-            string=string.replace(String.valueOf("G#"), "g");
-            string=string.replace(String.valueOf("A#"), "a");
-
-            return string;
+    private boolean isBeauty(int p) {
+        HashSet<Character> set = new HashSet();
+        String changeString = String.valueOf(p);
+        for (int i = 0; i < 4; i++) {
+            set.add(changeString.charAt(i));
         }
+
+        if(set.size()<4){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        for (int i = 1000; i <= 10000; i++) {
+            System.out.println("p : "+i+ "answer : "+s.solution(i));
+        }
+
+    }
+
 }
