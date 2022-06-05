@@ -1,6 +1,4 @@
-package Programmers;
-
-import java.lang.invoke.SerializedLambda;
+package ProgrammersLv1.코딩테스트;
 
 abstract class Employee{
     int sabun;

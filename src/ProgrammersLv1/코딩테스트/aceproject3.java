@@ -1,6 +1,4 @@
-package Programmers;
-
-import java.util.Arrays;
+package ProgrammersLv1.코딩테스트;
 
 public class aceproject3 {
 

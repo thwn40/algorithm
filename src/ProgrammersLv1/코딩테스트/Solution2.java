@@ -1,4 +1,4 @@
-package Programmers;
+package ProgrammersLv1.코딩테스트;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
