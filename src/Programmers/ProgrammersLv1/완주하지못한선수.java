@@ -1,7 +1,6 @@
-package ProgrammersLv1;
+package Programmers.ProgrammersLv1;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class 완주하지못한선수 {
     public String solution(String[] participant, String[] completion) {

@@ -1,4 +1,4 @@
-package ProgrammersLv1;
+package Programmers.ProgrammersLv1;
 
 public class 숫자문자열과영단어 {
     public int solution(String s) {

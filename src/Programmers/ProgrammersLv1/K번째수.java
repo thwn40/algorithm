@@ -1,9 +1,6 @@
-package ProgrammersLv1;
+package Programmers.ProgrammersLv1;
 
-import java.security.cert.CollectionCertStoreParameters;
 import java.util.Arrays;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class K번째수 {
     public int[] solution(int[] array, int[][] commands) {

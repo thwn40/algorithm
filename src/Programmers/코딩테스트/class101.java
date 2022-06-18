@@ -1,4 +1,4 @@
-package ProgrammersLv1.코딩테스트;
+package Programmers.코딩테스트;
 
 class class101 {
     int solution(int X, int Y, int[] A) {

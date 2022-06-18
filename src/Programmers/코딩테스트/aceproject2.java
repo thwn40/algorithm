@@ -1,4 +1,4 @@
-package ProgrammersLv1.코딩테스트;
+package Programmers.코딩테스트;
 
 import java.util.*;
 

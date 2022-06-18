@@ -1,6 +1,4 @@
-package ProgrammersLv1;
-
-import java.util.Arrays;
+package Programmers.ProgrammersLv1;
 
 public class 음양더하기 {
     public int solution(int[] absolutes, boolean[] signs) {

@@ -1,4 +1,4 @@
-package ProgrammersLv1;
+package Programmers.ProgrammersLv1;
 
 public class 신규아이디추천LV1 {
     public String solution(String new_id) {
