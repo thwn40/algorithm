@@ -1,48 +1,44 @@
 package Programmers.ProgrammersLv1;
 
 import java.awt.image.ImageProducer;
+import java.sql.Array;
 import java.util.*;
 
 public class 실패율 {
 
 
     public ArrayList<Integer> solution(int N, int[] stages) {
-        Map<Integer, Double> result = new TreeMap();
 
-        for (int i = 1; i < N + 1; i++) {
+        Map<Integer,Double> result = new HashMap<>();
 
+
+            int[] users = new int[N+1];
             int clear = 0;
-            int challenge = 0;
-
+            int challenge = stages.length;
             for (int stage : stages) {
-                if (stage >= i) {
-                    clear++;
-                }
-                if (stage == i) {
-                    challenge++;
-
-                }
+                users[stage-1]++;
             }
 
-            if(challenge==0||clear==0){
-                result.put(i, 0.0);
+        for (int i = 0; i < N; i++) {
+            if(users[i]==0){
+                result.put(i+1,0.0);
             }
             else{
-                result.put(i, (double)challenge / clear);
+                result.put(i+1,(double)users[i]/challenge);
+                challenge -=users[i];
             }
 
         }
 
-        List<Map.Entry<Integer,Double>> entryList = new LinkedList<>(result.entrySet());
-        entryList.sort(Map.Entry.comparingByValue(Comparator.reverseOrder()));
 
-        ArrayList<Integer> answer = new ArrayList<>();
 
-        for (Map.Entry<Integer, Double> integerDoubleEntry : entryList) {
-            answer.add(integerDoubleEntry.getKey());
-        }
 
-            return answer;
+        ArrayList<Integer> list = new ArrayList<>();
+        list.addAll(result.keySet());
+        Collections.sort(list,Comparator.comparingDouble(result::get).reversed());
+
+
+        return list;
         }
 
 
