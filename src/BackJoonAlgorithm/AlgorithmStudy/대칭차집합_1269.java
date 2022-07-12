@@ -4,9 +4,6 @@ import javax.accessibility.AccessibleRelationSet;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.Buffer;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 
@@ -21,7 +18,6 @@ public class 대칭차집합_1269 {
         int numB = Integer.parseInt(st.nextToken());
 
 
-
         HashSet<Integer> A = new HashSet<>();
         HashSet<Integer> B = new HashSet<>();
         HashSet<Integer> aClone = new HashSet<>();
@@ -32,7 +28,6 @@ public class 대칭차집합_1269 {
             temp =Integer.parseInt(st.nextToken());
             A.add(temp);
             aClone.add(temp);
-
         }
 
         st=new StringTokenizer(br.readLine());
@@ -42,8 +37,6 @@ public class 대칭차집합_1269 {
 
         A.removeAll(B);
         B.removeAll(aClone);
-
-
 
 
 
