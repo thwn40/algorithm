@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class 계단오르기_2579 {
@@ -19,11 +20,12 @@ public class 계단오르기_2579 {
             stair[i]= Integer.parseInt(br.readLine());
         }
 
+        dp[0]=0;
         dp[1]=stair[1];
         dp[2]=stair[1]+stair[2];
 
         for (int i = 3; i <=N; i++) {
-            dp[i]=Math.max(dp[i-3]+stair[i-1],dp[i-2])+stair[i];
+            dp[i] = Math.max(dp[i - 1], Math.max(dp[i - 2] + stair[i], dp[i - 3] + stair[i - 1] + stair[i]));
 
         }
 
