@@ -12,6 +12,7 @@ class Location{
 }
 
 public class BJ21782 {
+
     static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static int arr[][];
     static int isVisit[][];

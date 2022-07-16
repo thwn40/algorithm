@@ -5,7 +5,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class BJ2667 {
+public  class BJ2667 {
+
+
  /*
     백준 2667번 단지번호 붙이기
     유형 : dfs

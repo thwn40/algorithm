@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class BJ2606 {
+
     /*
     백준 2606번 dfs
      */
@@ -17,6 +18,7 @@ public class BJ2606 {
 
 
     public static void main(String[] args) {
+        
         Scanner scan = new Scanner(System.in);
         int vertex = scan.nextInt();
         int edge = scan.nextInt();
