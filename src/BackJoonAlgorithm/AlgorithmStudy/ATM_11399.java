@@ -5,36 +5,31 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.StringTokenizer;
 
-public class 연속합_1912 {
+
+
+public class ATM_11399 {
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-
+        int[] arr = new int[N];
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int[] numbers = new int[N];
-
-        int[] dp = new int[N];
-
-
-        int idx = 0;
-        while (st.hasMoreTokens()) {
-            numbers[idx] = (Integer.parseInt(st.nextToken()));
-            idx++;
+        for (int i = 0; i < N; i++) {
+           arr[i]=Integer.parseInt(st.nextToken());
         }
-        dp[0] = numbers[0];
+        Arrays.sort(arr);
 
-        int max=numbers[0];
-
+        int[] sum = new int[N];
+        sum[0]=arr[0];
+        int answer =arr[0];
         for (int i = 1; i < N; i++) {
-         dp[i]=Math.max(dp[i-1]+numbers[i],numbers[i]);
-
-            max = Math.max(max,dp[i]);
+            sum[i]+=sum[i-1]+arr[i];
+            answer+=sum[i];
         }
-        System.out.println(max);
-
-
+        System.out.println(answer);
     }
 }

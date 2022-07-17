@@ -1,17 +1,16 @@
 package BackJoonAlgorithm.AlgorithmStudy;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.*;
 
 public class AC_5430 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int T = Integer.parseInt(br.readLine());
         int n;
-        ArrayList<String> answers = new ArrayList<>();
+
 
         Loop1 :
         for (int i = 0; i < T; i++) {
@@ -23,8 +22,10 @@ public class AC_5430 {
             arr.deleteCharAt(arr.length()-1);
             StringTokenizer st = new StringTokenizer(arr.toString(), ",");
             for (int j = 0; j < n; j++) {
-                deque.offer(Integer.valueOf(st.nextToken()));
+                String tmp = st.nextToken();
+                if(!tmp.isBlank())deque.offer(Integer.valueOf(tmp));
             }
+
 
             int totalR = 0;
             boolean trueStackFalseQueue = false;
@@ -46,28 +47,33 @@ public class AC_5430 {
                     }
                 }
                 else if(c=='D'&&deque.isEmpty()){
-                    System.out.println("error");
-                   continue Loop1;
+                    bw.write("error");
+                    bw.newLine();
 
+                    continue Loop1;
                 }
 
 
             }
+
             if(totalR%2==1){
-                for (int j = 0; j < deque.size()-1; j++) {
-                    deque.offerLast(deque.pollFirst());
-
+                bw.write("[");
+                while(!deque.isEmpty()){
+                    bw.write(String.valueOf(deque.pollLast()));
+                    if(!deque.isEmpty()) bw.write(",");
                 }
-                System.out.println(deque.toString().replace(" ", ""));
-
+                bw.write("]\n");
             }
             else{
-                System.out.println(deque.toString().replace(" ", ""));
-
+                bw.write(deque.toString().replace(" ", ""));
+                bw.newLine();
             }
+
 
 
         }
+        bw.flush();
+        bw.close();
 
     }
 

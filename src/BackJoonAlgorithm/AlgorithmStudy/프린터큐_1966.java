@@ -49,7 +49,6 @@ public class 프린터큐_1966 {
         int M;
         int idx;
         PriorityQueue<document> printer = new PriorityQueue<>(Comparator.reverseOrder());
-        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());
         Queue<document> q = new LinkedList<>();
         int[] answers = new int[N];
 
