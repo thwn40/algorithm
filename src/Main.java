@@ -96,6 +96,18 @@ class Solution {
     }
 
 
+    public HashMap<String, String> transformFirstAndLast(String[] arr) {
+        // TODO:
+        if(arr.length==0){
+            return null;
+        }
+        HashMap<String,String> hashMap = new HashMap<>();
+        hashMap.put(arr[0],arr[1]);
+
+        return hashMap;
+
+    }
+
     public static void main(String[] args) {
 
         }
