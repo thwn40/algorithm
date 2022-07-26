@@ -1,4 +1,4 @@
-package BackJoonAlgorithm.AlgorithmStudy;
+package BackJoonAlgorithm.AlgorithmStudy.week3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,24 +10,6 @@ import java.util.StringTokenizer;
 public class 랜선자르기_1654 {
 
     public static void main(String[] args) throws IOException, InterruptedException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        StringTokenizer st = new StringTokenizer(br.readLine());
-//        int K = Integer.parseInt(st.nextToken());
-//        int M = Integer.parseInt(st.nextToken());
-//        ArrayList<Integer> arr = new ArrayList<>();
-//        for (int i = 0; i < K; i++) {
-//            arr.add(Integer.valueOf(br.readLine()));
-//        }
-//        int temp = 201;
-//        double sum1 = 0;
-//        for (int i = 0; i < K; i++) {
-//            double i1 = (arr.get(i) / temp );
-//
-//            sum1+=i1;
-//            System.out.println(i1);
-//        };
-//        System.out.println(sum1);
-//    }
 
 
 
