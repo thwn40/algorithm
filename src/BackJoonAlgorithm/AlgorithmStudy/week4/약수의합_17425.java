@@ -1,36 +1,43 @@
 package BackJoonAlgorithm.AlgorithmStudy.week4;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class 약수의합_17425 {
     public static void main(String[] args) throws IOException {
-        long N;
-        long answer = 0; // 1000000까지 입력할 것을 고려
+
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        long T = Integer.parseInt(br.readLine());
-        long[] Tlist = new long[(int)T];
-        for (int i = 0; i < T; i++) {
-             Tlist[i]= Integer.parseInt(br.readLine());
-        }
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
 
         long[] arr = new long[1000001];
         long[] psum = new long[1000001];
-        for (int i = 0; i < T; i++) {
+        Arrays.fill(arr,1);
 
-            N = Tlist[i];
-            for (long j = 1; j <= 1000001; j++) {
-                arr[(int) N] += j * (N / j);
+        for (int i = 2; i < 1000001; i++) {
+            for (int j = 1; j*i < 1000001; j++) {
+                arr[(j*i)]+=i;
             }
 
         }
 
+        for (int i = 1; i < 1000001; i++) {
+            psum[i] = psum[i-1] + arr[i];
+        }
 
 
+//        System.out.println(Arrays.toString(psum));
+//        System.out.println(Arrays.toString(arr));
+        long T = Integer.parseInt(br.readLine());
+        for (int i = 0; i < T; i++) {
+            int answer = Integer.parseInt(br.readLine());
+            bw.write(psum[answer]+"\n");
+        }
+
+        bw.flush();
     }
 }
 

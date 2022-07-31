@@ -18,23 +18,23 @@ public class old약수의합_17425 {
         }
 
         int tMax = Arrays.stream(Ts).max().orElse(-1);
-        boolean[] primeNumber = new boolean[tMax + 1];
+        boolean[] primeNumber = new boolean[1000001];
         Arrays.fill(primeNumber, true);
         primeNumber[0] = false;
         primeNumber[1] = false;
-        for (int i = 2; i <= tMax; i++) {
+        for (int i = 2; i < 1000001; i++) {
             if (!primeNumber[i]) continue;
 
-            for (int j = 2 * i; j <= tMax; j += i) {
+            for (int j = 2 * i; j < 1000001; j += i) {
                 primeNumber[j] = false;
             }
 
 
         }
-        int[] yakSuSum = new int[tMax+1];
-        long[] psum = new long[tMax+1];
+        int[] yakSuSum = new int[1000001];
+        long[] psum = new long[1000001];
         for (int i = 0; i < T; i++) {
-            System.out.println(psum[Ts[i]]);
+//            System.out.println(psum[Ts[i]]);
             if(psum[Ts[i]]!=0){
                 continue;
             }

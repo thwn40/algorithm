@@ -1,114 +1,90 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 class Solution {
 
 
-    public int addOddValues(HashMap<Character, Integer> hashMap) {
-        //TODO..
-        int sum =0;
-        Set<Character> characters = hashMap.keySet();
-        Iterator<Character> iterator = characters.iterator();
 
-        while(iterator.hasNext()){
-            Character next = iterator.next();
-            if(hashMap.get(next)%2==0){
-                System.out.println(hashMap.get(next));
-                sum+=hashMap.get(next);
+
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        final int max = 1000000;
+        int[] arr = new int[max+1];
+
+        Arrays.fill(arr,1);
+
+
+        //fn
+        for (int i = 2; i < arr.length; i++) {
+            for (int j = 1; j*i < arr.length; j++) {
+                arr[i*j]+=i;
             }
-
         }
 
-          /**
-           * int result = 0;
-    Set<Character> tem = new Set<>();
+        int[] sum = new int[max+1];
 
-    tem = hashMap.keySet();
+        //gn
+        for (int i = 1; i < sum.length; i++) {
+            sum[i]=sum[i-1]+arr[i];
+        }
 
-    Iterator<Character> it = tem.iterator();
+        int N = Integer.parseInt(br.readLine());
 
-    while(it.hasNext()){
-           Character next = iterator.next();
-      if(hashMap.get(next) % 2==0)
-           result += hashMap.get(next);
+        for (int i = 0; i < N; i++) {
+            int answer = Integer.parseInt(br.readLine());
+            System.out.println(sum[answer]);
+        }
+
+
+
+        }
     }
-    return result;
-           *
-           * */
 
 
-//        System.out.println(characters);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        final int MAX = 1_000_000;
 //
-//        for (Character character : hashMap.keySet()) {
-//
-//            if(hashMap.get(character)%2==0){
-//                sum+=hashMap.get(character);
+//        int[] arr = new int[MAX+1];
+//        int[] sum = new int[MAX+1];
+//        Arrays.fill(arr,1);
+//        for (int i = 2; i < arr.length; i++) {
+//            for (int j = 1; i*j < arr.length; j++) {
+//                arr[i*j]+=i;
 //            }
 //        }
+//
+//        for (int i = 1; i <sum.length; i++) {
+//            // 1부터 i 번째의 합 = 1부터 i-1번째의 합 +  i랑 똑같지 않을까요?
+//            sum[i]= sum[i-1]+arr[i];
+//        }
+////        System.out.println(Arrays.toString(arr));
+//
+////        System.out.println(psum);
+//
+//        int N = Integer.parseInt(br.readLine());
+//
+//        for (int i = 0; i < N; i++) {
+//            int answer = Integer.parseInt(br.readLine());
+//            System.out.println(sum[answer]);
+//        }
 
-        return sum;
-    }
-
-    public String getElementOfListEntry(HashMap<String, List<String>> hashMap, String key, int index) {
-        //TODO..
-        if(hashMap.containsKey(key)){
-            return null;
-        }
-
-        if(hashMap.get(key).size()>index){
-            return null;
-        }
-        return hashMap.get(key).get(index);
-    }
-
-    public boolean isMember(HashMap<String, String> member, String username, String password) {
-        //TODO..
-        if( member.containsKey(username)&&member.get(username).equals(password))
-            return true;
-        else return false;
-    }
-    public HashMap<String, Integer> select(String[] arr, HashMap<String, Integer> hashMap) {
-        //TODO..
-        int i =0;
-        HashMap<String,Integer> map = new HashMap<>();
-        for (String s : arr) {
-            if(hashMap.containsKey(s)){
-                map.put(s,hashMap.get(s));
-            }
-
-        }
-
-        return map;
-    }
-
-    public HashMap<Character, Integer> countAllCharacter(String str) {
-        HashMap<Character,Integer> hashMap = new HashMap<>();
-        if(str.length()==0){
-            return null;
-        }
-        char[] chars = str.toCharArray();
-        for (Character c : chars) {
-            hashMap.put(c,hashMap.getOrDefault(c,3)+1);
-        }
-
-        return hashMap;
-
-        //TODO..
-    }
-
-
-    public HashMap<String, String> transformFirstAndLast(String[] arr) {
-        // TODO:
-        if(arr.length==0){
-            return null;
-        }
-        HashMap<String,String> hashMap = new HashMap<>();
-        hashMap.put(arr[0],arr[1]);
-
-        return hashMap;
-
-    }
-
-    public static void main(String[] args) {
-        System.out.println(2/3);
-        }
-    }
