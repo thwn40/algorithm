@@ -267,6 +267,23 @@ return ans.toString();
         return arr;
     }
 
+    public static String readVertically(String[] arr) {
+        int max = 0;
+        for (String s : arr) {
+            max=Math.max(max,s.length());
+        }
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < max; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if(i> arr[j].length()-1){
+                    continue;
+                }
+                sb.append(arr[j].charAt(i));
+            }
+        }
+        return sb.toString();
+    }
+
 //    public int[] reverseArr(int[] arr){
 //        // TODO:
 //
@@ -280,24 +297,96 @@ return ans.toString();
 
     /**
      *  1 2 3 4 5
-     * @param args
+     * @param
      * @throws IOException
      */
+    public static boolean superIncreasing(int[] arr) {
+        // TODO:
+        int[] sum = new int[arr.length];
+        sum[0]=arr[0];
+        for (int i = 1; i < sum.length; i++) {
+            sum[i]=sum[i-1]+arr[i];
+        }
+        boolean answer = true;
+        for (int i = 2; i < arr.length; i++) {
+            if(arr[i]<=sum[i-1]){
+
+                answer =false;
+            }
+        }
+
+        return answer;
+    }
+    public boolean isIsogram(String str) {
+        // TODO:
+       if(str.isEmpty()) return true;
+        str=str.toLowerCase();
+
+       Set<Character> set = new HashSet<>();
+        for (int i = 0; i < str.length(); i++) {
+           set.add(str.charAt(i));
+        }
+
+        if(set.size()==str.length()){
+            return true;
+        }
+        return false;
+    }
+
+    public static String computeSquareRoot(int num) {
+        // TODO:
+        num = num*10000;
+        int ans = 100000;
+        int abs =0;
+        for (int i = 1; i < num; i++) {
+            System.out.println(i);
+            int ii= i*i;
+            ans = Math.min(ans, Math.abs(num - ii));
+            System.out.println(ans);
+        }
+        return String.valueOf(ans/100);
+    }
+
+
+        public static String decryptCaesarCipher(String str, int secret) {
+            // TODO:
+            str=str.toLowerCase();
+            StringTokenizer st = new StringTokenizer(str);
+            char[] answer = new char[str.length()];
+            int i =0;
+            while(st.hasMoreTokens()){
+
+                for (char c : st.nextToken().toCharArray()) {
+                    if(c-secret<97){
+                        answer[i]=(char)(c-secret+26);
+                    }
+                    else{
+                        answer[i]=((char) (c-secret));
+                    }
+
+                    i++;
+                }
+
+
+             if(i!=str.length()){
+                 answer[i]=' ';
+             }
+                i++;
+            }
+
+        return String.valueOf(answer);
+        }
+
 
     public static void main(String[] args) throws IOException {
-        String output = insertDash("454793");
+        String output = decryptCaesarCipher("mnv xnt zqd qdzcx sn lnud sn hlldqrhud bntqrd", 25);
         System.out.println(output);
-
-
-
     }
     }
 
 
-
-
-
-
+//60000
+//245*245
 
 
 
