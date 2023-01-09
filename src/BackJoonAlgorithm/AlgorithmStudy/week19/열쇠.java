@@ -1,6 +1,12 @@
-import java.util.*;
+package BackJoonAlgorithm.AlgorithmStudy.week19;
 
-public class Main {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class 열쇠 {
 	static Queue<Position> queue = new LinkedList<>();
 
 	public static void main(String[] args) {
@@ -174,4 +180,5 @@ public class Main {
 		}
 	}
 }
+
 
