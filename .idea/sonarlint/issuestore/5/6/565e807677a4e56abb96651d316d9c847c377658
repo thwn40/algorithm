@@ -1,0 +1,24 @@
+
+]
+java:S1192K"GDefine a constant instead of duplicating this literal "mislav" 3 times.(ºååÿ
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ôà¥¦
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(×É»Æ
+Q
+java:S18542";Remove this useless assignment to local variable "integer".(Ø¶¢±
+F
+java:S1481"+Remove this unused "answer" local variable.(şù›şÿÿÿÿ
+S	java:S106."9Replace this use of System.out or System.err by a logger.(¡Ú†üÿÿÿÿ
+J
+java:S28641"4Iterate over the "entrySet" instead of the "keySet".(«—‡ä
+B
+java:S14812",Remove this unused "integer" local variable.(Ø¶¢±
+S	java:S1068"9Replace this use of System.out or System.err by a logger.(Ô´¸éşÿÿÿÿ
+S	java:S106?"9Replace this use of System.out or System.err by a logger.(¡ìÎøÿÿÿÿ
+N	java:S106B"9Replace this use of System.out or System.err by a logger.(õ‡Ê
+N	java:S106K"9Replace this use of System.out or System.err by a logger.(ºååÿ
+S	java:S106L"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+N	java:S106M"9Replace this use of System.out or System.err by a logger.(ä‘Öñ
+S	java:S106N"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+N	java:S106O"9Replace this use of System.out or System.err by a logger.(†‰î„
+S	java:S106P"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+N	java:S106Q"9Replace this use of System.out or System.err by a logger.(“µ¤Ê

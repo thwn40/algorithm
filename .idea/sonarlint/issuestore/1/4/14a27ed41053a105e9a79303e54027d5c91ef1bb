@@ -1,0 +1,19 @@
+
+o
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(‰å¡â
+k	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éÛôÊıÿÿÿÿ
+k	java:S117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä²ú”ÿÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Û³«
+g
+java:S3008	"LRename this field "N" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ûîèõşÿÿÿÿ
+N	java:S106-"9Replace this use of System.out or System.err by a logger.(Ü¡–ò
+S	java:S1063"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+‡
+java:S11308"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(éÛôÊıÿÿÿÿ
+N	java:S106="9Replace this use of System.out or System.err by a logger.(ˆåõ½
+=
+java:S1125C"'Remove the unnecessary boolean literal.(ƒú³
+S	java:S106E"9Replace this use of System.out or System.err by a logger.(Ó»æøÿÿÿÿÿ
+N	java:S106N"9Replace this use of System.out or System.err by a logger.(ˆåõ½
+=
+java:S1125R"'Remove the unnecessary boolean literal.(ö£Õí
